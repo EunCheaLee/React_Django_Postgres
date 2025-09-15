@@ -1,4 +1,6 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import {fetchGetData } from "../redux/api.js"
+import {useEffect} from "react";
 
 
 const wrapStyles = {
@@ -28,8 +30,18 @@ const textStyles = {
 
 const SimpleTop = () => {
     const { totalRevenue, totalProfit, transactionCount, customerCount } = useSelector(
-        (state) => state.dashboard
+        (state) =>{
+            console.log(state)
+            return state.dashboard
+        }
     );
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        console.log(totalRevenue)
+        dispatch(fetchGetData());
+    },[dispatch]);
 
     return (
         <>
