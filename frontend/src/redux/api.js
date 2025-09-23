@@ -36,6 +36,11 @@ export const fetchGetData = createAsyncThunk(
                 api.get("total-profit", { signal }),  // 매출이익
                 api.get("transaction-count", { signal }), // 거래건수
                 api.get("customer-count", { signal }),   // 고객수
+                api.get("target-achievement", { signal }), // 목표매출달성현황
+                api.get("channel-revenue", { signal }), // 채널별 매출
+                api.get("promotion-revenue", { signal }), // 프로모션별 매출
+                api.get("yearly-revenue-profit", { signal }), // 연별 매출 이익
+                api.get("region-revenue", { signal }), //지역별 매출
             ]);
 
             // 응답을 객체로 묶어 리턴 (각 API 요청의 .data를 사용)
@@ -44,6 +49,11 @@ export const fetchGetData = createAsyncThunk(
                 totalProfit: response[1].total_profit,   // 매출이익
                 transactionCount: response[2].transaction_count, // 거래건수
                 customerCount: response[3].customer_count,  // 고객수
+                targetAchievement: response[4].target_achievement, // 목표매출달성현황
+                channelRevenue: response[5], // 채널별 매출(리스트로 받음)
+                promotionRevenue: response[6], // 프로모션별 매출(리스트로 받음)
+                yearlyRevenueProfit: response[7], //연별 매출 이익(리스트로 받음)
+                regionRevenue: response[8], //지역별 매출(리스트로 받음)
             };
         } catch (e) {
             // 에러 처리
