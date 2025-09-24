@@ -41,26 +41,22 @@ const textStyles = {
     fontWeight: 'bold',
 }
 
-
-
 const Main = () => {
     return (
         <>
-            <body style={bodyStyle}>
-                <div>버트으으으으으으으으으으으으으은</div>
-                <div style={wrapColumnStyle}>
-                    <SimpleTop />
-                    <div style={wrapRowStyles}>
-                        <ByYear_SaleProfit style={boxStyles} />
-                        <ByPromotion style={boxStyles} />
-                        <ByChannel style={boxStyles}/>
-                    </div>
-                    <div style={wrapRowStyles}>
-                        <ByRegion style={boxStyles} />
-                        <ByYear_categorySales style={boxStyles} />
-                    </div>
+            <div id="btn">Button</div>
+            <div style={wrapColumnStyle}>
+                <SimpleTop />
+                <div style={wrapRowStyles}>
+                    <ByYear_SaleProfit style={boxStyles} />
+                    <ByPromotion style={boxStyles} />
+                    <ByChannel style={boxStyles}/>
                 </div>
-            </body>
+                <div style={wrapRowStyles}>
+                    <ByRegion style={boxStyles} />
+                    <ByYear_categorySales style={boxStyles} />
+                </div>
+            </div>
         </>
     )
 }
